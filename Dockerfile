@@ -1,5 +1,5 @@
 FROM nginx:alpine
-RUN rm -f /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
-COPY index.html /usr/share/nginx/html/index.html
+RUN rm -f /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY index.html /usr/share/nginx/html/index.html
 EXPOSE 3000
