@@ -2,10 +2,10 @@ services:
   web:
     image: ghcr.io/kasperstuck/hello-world:latest
     ports:
-      - 8080
+      - 80
     stop_grace_period: 20s
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:80"]
       interval: 10s
       timeout: 5s
       retries: 3
